@@ -8,7 +8,6 @@ Stack
 
 [http://crempp.github.io/presentation-ngw2f/](http://crempp.github.io/presentation-ngw2f/)
 
-
 ## Run
 
 ```
@@ -21,7 +20,3 @@ $ source env/bin/activate
 ```
 git subtree push --prefix presentation origin gh-pages
 ```
-
-
-REFS TO WRITE UP
-- http://lucumr.pocoo.org/2007/5/21/getting-started-with-wsgi/
