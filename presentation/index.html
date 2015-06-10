@@ -123,14 +123,14 @@ Connection closed by foreign host.</code></pre></div></div></section></section><
 <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 22px;" data-block-id="57317a9ad88ee2ee77f6bcaf7b095e2e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <h1>Nginx</h1>
 </div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 357.925px; height: 515px; left: 301px; top: 163px;" data-block-id="52e7c5522e7c89d983f78e09c4a4d742"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="417" data-natural-height="600" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1471431/ngw2f-cycle-nginx.png"></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="620f3f35a2c001c782f5dcb2a5a97bdd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 357.925px; height: 515px; left: 301px; top: 163px;" data-block-id="52e7c5522e7c89d983f78e09c4a4d742"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="417" data-natural-height="600" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1471431/ngw2f-cycle-nginx.png"></div></div></section><section data-id="3bdff2257b155b7bd954c58841e8fc4c"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="620f3f35a2c001c782f5dcb2a5a97bdd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Nginx Overview</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 331px;" data-block-id="b004de8ff5bda5a44e7a0322aea263d6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <p>&lt;placeholder&gt;</p>
 </div></div></section><section data-id="8b4b38b709a7e66ce0a1d64462bc88d7"><div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 701.165247018739px; height: 436px; left: 131px; top: 202px;" data-block-id="b7ab4c31c37448fb3c0abff88f6ce1cc"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="944" data-natural-height="587" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1467013/architecture.png"></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="adc23ee97ef892e716bcf3b951fc0bf6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
-<h2>Architecture</h2>
+<h2>Nginx Architecture</h2>
 </div></div></section><section data-id="ef856bdf05cdaaefc4c50c1e4c385dbb"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="2af65e9db93fc2db1c34da9b44772082"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Typical Request</h2>
 </div></div>
@@ -217,45 +217,30 @@ http {
         }
     }
 }
-include servers/*;</code></pre></div></div></section><section data-id="3d712e6abcc2d8ef5d0e51027c407d23"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 73px; height: auto;" data-block-id="133dfcef2b41988fc4715ed7450ea899"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
-<h2>The Request</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 110px; left: 160px; top: 166px;" data-block-id="25611465b54289c05544e3242b0eec3f"><div class="sl-block-content" style="z-index: 12;"><pre class="ini"><code>$ telnet localhost 8080
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-GET / HTTP/1.0</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 289px; height: auto;" data-block-id="7bba9e9a1c2425c9d8a506c3cc29b664"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;">
-<h2>The Response</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 256px; left: 160px; top: 371px;" data-block-id="19031ade244e9fea7fb049665bfc9634"><div class="sl-block-content" style="z-index: 14;"><pre class="ini"><code>HTTP/1.1 200 OK
-Server: nginx/1.8.0
-Date: Sun, 07 Jun 2015 22:06:58 GMT
-Content-Type: text/html
-Content-Length: 25
-Last-Modified: Tue, 02 Jun 2015 23:48:40 GMT
-Connection: close
-ETag: "556e40d8-19"
-Accept-Ranges: bytes
+include servers/*;</code></pre></div></div></section><section data-id="3d712e6abcc2d8ef5d0e51027c407d23">
 
-Hello World (from Nginx)
-Connection closed by foreign host.</code></pre></div></div></section></section><section class="stack" data-id="75f7d317bac3806802058cf5c91da1c1"><section data-id="28e21e2384a2a35a41d7d48d13dccfc0">
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 302px;" data-block-id="84b50b64dca11af705fba61749f32be9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1>Demo</h1>
+</div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 313px; height: auto;" data-block-id="a0fc51dda5d4c1c8ac0962398562f2ca"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+<h2>Demo</h2>
+</div></div></section></section><section class="stack" data-id="75f7d317bac3806802058cf5c91da1c1"><section data-id="28e21e2384a2a35a41d7d48d13dccfc0">
 <div class="sl-block" data-block-type="text" style="width: 651px; left: 249px; top: 445px; height: auto;" data-block-id="0c26a5090b968e39b4c5dc239f53bd8f"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" dir="ui" data-has-custom-html="" style="z-index: 11;"></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 22px;" data-block-id="2e7d950de65b212ce53903c822ee47d3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <h1>Gunicorn</h1>
 </div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 288.849489795918px; height: 547px; left: 336px; top: 147px;" data-block-id="d9f2cc9e7096fd566b5ede1d0193a30b"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="414" data-natural-height="784" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1471432/ngw2f-cycle-gunicorn__1_.png"></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="f1db9475956cd10de407d0791caa9aab"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 288.849489795918px; height: 547px; left: 336px; top: 147px;" data-block-id="d9f2cc9e7096fd566b5ede1d0193a30b"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="414" data-natural-height="784" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1471432/ngw2f-cycle-gunicorn__1_.png"></div></div></section><section data-id="330701487800bb2953d1601d4d705d4e"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="f1db9475956cd10de407d0791caa9aab"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h2>Gunicorn Overview</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 331px;" data-block-id="a7f54960b61218269925f9136a157ee4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <p>&lt;placeholder&gt;</p>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="30214c726d9015447a6ef854c4c67d2e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+</div></div></section><section data-id="8865bdd051fa87bf02b149ac65ad9adf"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="30214c726d9015447a6ef854c4c67d2e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Gunicorn Architecture</h2>
 </div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 880.53781512605px; height: 354px; left: 40px; top: 210px;" data-block-id="2a3902361b1b2cf842643b51b7c9cea7"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="888" data-natural-height="357" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1467251/gunicorn-architecture.png"></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="68273ba1d0f993eea72396f93b83a87c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 880.53781512605px; height: 354px; left: 40px; top: 210px;" data-block-id="2a3902361b1b2cf842643b51b7c9cea7"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="888" data-natural-height="357" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1467251/gunicorn-architecture.png"></div></div></section><section data-id="67de2b24030bdd6b5f273f169b2523aa"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="68273ba1d0f993eea72396f93b83a87c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Gunicorn Hooks</h2>
 </div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 618.45px; height: 589px; left: 171px; top: 99px;" data-block-id="347318e9a03c495464980e5bd3c57f70"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="945" data-natural-height="900" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1467581/Gunicorn_Hooks.png"></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="4d8fed53c6c73de733d982d2254dc886"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 618.45px; height: 589px; left: 171px; top: 99px;" data-block-id="347318e9a03c495464980e5bd3c57f70"><div class="sl-block-content" style="z-index: 12;"><img data-natural-width="945" data-natural-height="900" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1467581/Gunicorn_Hooks.png"></div></div></section><section data-id="96db5033bae7e8abf13532128161e230"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="4d8fed53c6c73de733d982d2254dc886"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Gunicorn Sample App</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 663px; height: 300px; left: 149px; top: 210px;" data-block-id="95b5ce4c49ad3fd9c11f9618deb1e7cb"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>def app(environ, start_response):
@@ -284,34 +269,17 @@ $ source env/bin/activate
 <div class="sl-block" data-block-type="text" style="width: 800px; left: 73px; top: 463px; height: auto;" data-block-id="c14c176004fa6e4022f6c54decb59187"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 15;">
 <h2>Run (through nginx)</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 640px; height: 55px; left: 160px; top: 548px;" data-block-id="51edc8aecdca152b54b15e4dd08f57ab"><div class="sl-block-content" style="z-index: 16;"><pre class="bash"><code>$ gunicorn --workers=2 app:app</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 73px; height: auto;" data-block-id="066065463324e584eb5114d7d154df23"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
-<h2>The Request</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 110px; left: 160px; top: 166px;" data-block-id="cc172ac12cb1976dc645942ca472102f"><div class="sl-block-content" style="z-index: 12;"><pre class="ini"><code>$ telnet localhost 8080
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-GET / HTTP/1.0</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 289px; height: auto;" data-block-id="3faa8c7e6bf3dc51bcadf35082c270fb"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;">
-<h2>The Response</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 256px; left: 160px; top: 371px;" data-block-id="f9b8c5f4e4172ccafdadc12ead951279"><div class="sl-block-content" style="z-index: 14;"><pre class="ini"><code>HTTP/1.1 200 OK
-Server: nginx/1.8.0
-Date: Sun, 07 Jun 2015 22:06:58 GMT
-Content-Type: text/html
-Content-Length: 25
-Last-Modified: Tue, 02 Jun 2015 23:48:40 GMT
-Connection: close
-ETag: "556e40d8-19"
-Accept-Ranges: bytes
+<div class="sl-block" data-block-type="code" style="width: 640px; height: 55px; left: 160px; top: 548px;" data-block-id="51edc8aecdca152b54b15e4dd08f57ab"><div class="sl-block-content" style="z-index: 16;"><pre class="bash"><code>$ gunicorn --workers=2 app:app</code></pre></div></div></section><section data-id="a9afada7414f41e86273c21399829609">
 
-Hello World (from Nginx)
-Connection closed by foreign host.</code></pre></div></div></section></section><section class="stack"><section data-id="b4c56d763fb063f90e0f7c700bfd9395">
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 302px;" data-block-id="e50bfb167f7455f389af51a525b01f74"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1>Demo</h1>
+</div></div></section></section><section class="stack" data-id="90b0777d3bc85b322a6076dda3555432"><section data-id="b4c56d763fb063f90e0f7c700bfd9395">
 <div class="sl-block" data-block-type="text" style="width: 651px; left: 249px; top: 445px; height: auto;" data-block-id="ab0da980f998ac11b4885193e7d61821"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" dir="ui" data-has-custom-html="" style="z-index: 11;"></div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 22px;" data-block-id="76d100eff5446878d8159a1be53ac0a1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
-<h1>WSGI/Werkzeug</h1>
+<h1>WSGI</h1>
 </div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 225.68px; height: 546px; left: 367px; top: 147px;" data-block-id="176271c2cb12e3a10e6f1a786c7e5843"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="372" data-natural-height="900" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1471542/ngw2f-cycle-wsgi.png"></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="4e496120cb51a9d32205b9cb28e92be3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 225.68px; height: 546px; left: 367px; top: 147px;" data-block-id="176271c2cb12e3a10e6f1a786c7e5843"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="372" data-natural-height="900" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1471542/ngw2f-cycle-wsgi.png"></div></div></section><section data-id="4c4b1bf98ab967d3c195a5c2a62cace2"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="4e496120cb51a9d32205b9cb28e92be3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <h2>WSGI Specification</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 121px;" data-block-id="067ca664a3d3a58358f1277b5bf95409"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13;">
@@ -341,12 +309,12 @@ Connection closed by foreign host.</code></pre></div></div></section></section><
 	<li><span style="font-size:20px">Must call <em>start_response(status, headers)</em> before any content is <span style="line-height:26px">yielded</span></span></li>
 	<li><span style="font-size:20px">Any data returned must be iterable</span></li>
 </ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="26c92ebd596eb8f1597af08cb4aafab1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+</div></div></section><section data-id="e059bde55e24ea0d69425e01d925f636"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="26c92ebd596eb8f1597af08cb4aafab1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h2>WSGI Server Dispatch</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 475.286624203822px; height: 130px; left: 243px; top: 280px;" data-block-id="b4f424fd90780f6959acc5e5f64067ea"><div class="sl-block-content" style="z-index: 13; border-width: 1px;"><pre class="python"><code>iterable = application(environ, start_response)
 for data in iterable:
-   # send data to client</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="a6436eed23ce4f2a34aea2f33ec62c28"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+   # send data to client</code></pre></div></div></section><section data-id="aad2c7b23eb123fed512abb10640fb74"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="a6436eed23ce4f2a34aea2f33ec62c28"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h2>WSGI Application</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 587.136929460581px; height: 283px; left: 187px; top: 209px;" data-block-id="9a7be04aa804b8a5ab98cea1ae8cc74a"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>def application(environ, start_response):
@@ -359,29 +327,12 @@ for data in iterable:
     
     # Return body content
     return ['Body content']
-</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 73px; height: auto;" data-block-id="5e3b887be6f220dc5b89f03866c41d22"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
-<h2>The Request</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 110px; left: 160px; top: 166px;" data-block-id="7def9614ff6c84be6c3a6168cdd48105"><div class="sl-block-content" style="z-index: 12;"><pre class="ini"><code>$ telnet localhost 8080
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-GET / HTTP/1.0</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 289px; height: auto;" data-block-id="32640242c526b4aa2aa297ea5998a2ce"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;">
-<h2>The Response</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 256px; left: 160px; top: 371px;" data-block-id="2128a786c317c631be81ae33d42d0391"><div class="sl-block-content" style="z-index: 14;"><pre class="ini"><code>HTTP/1.1 200 OK
-Server: nginx/1.8.0
-Date: Sun, 07 Jun 2015 22:06:58 GMT
-Content-Type: text/html
-Content-Length: 25
-Last-Modified: Tue, 02 Jun 2015 23:48:40 GMT
-Connection: close
-ETag: "556e40d8-19"
-Accept-Ranges: bytes
+</code></pre></div></div></section><section data-id="2e13ee2664513106a549c841f1784d99">
 
-Hello World (from Nginx)
-Connection closed by foreign host.</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="df5b7a6d1d95d52b9b9f4d5ee24c2939"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 302px;" data-block-id="560bcf87009a8f5da10a039d83ffb0b3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1>Demo</h1>
+</div></div></section><section data-id="d09e12d15102bdb25a7e268f60f95e90"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="df5b7a6d1d95d52b9b9f4d5ee24c2939"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 10;">
 <h2>WSGI Middleware</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 587.136929460581px; height: 283px; left: 187px; top: 209px;" data-block-id="5aa13b2678f09b907b87d205f6f8f016"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>def middleware(environ, start_response):
@@ -394,10 +345,15 @@ Connection closed by foreign host.</code></pre></div></div></section><section><d
     
     # Do stuff to response
 
-    return response_iter</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="b9b08aeb782239ba7fe084c959cfd194"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+    return response_iter</code></pre></div></div></section></section><section class="stack" data-id="d19956359c26d018a54278bee1c80461"><section data-id="2b161f10e72318453a36d895b1af7f85">
+<div class="sl-block" data-block-type="text" style="width: 651px; left: 249px; top: 445px; height: auto;" data-block-id="ac79d8875ccdb89b5041c7b823d7ac91"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" dir="ui" data-has-custom-html="" style="z-index: 11;"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 22px;" data-block-id="1bf8bb3c80ab3398178aef28780e6712"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<h1>Werkzeug / Flask</h1>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 228.16px; height: 552px; left: 366px; top: 144px;" data-block-id="b1270df1c4df595ea248fd59e6f9622b"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="372" data-natural-height="900" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1471342/ngw2f-cycle-full.png"></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="5afc206fcb10b983114287c78393d7bb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Werkzeug</h2>
 </div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 214px;" data-block-id="9338e38c2cf8a99bc038dcf4cc6ae462"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 214px;" data-block-id="2806062ba2e358ea8dd97c62c1a76ee7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <ul>
 	<li>WSGI helpers</li>
 	<li>URL routing</li>
@@ -407,40 +363,37 @@ Connection closed by foreign host.</code></pre></div></div></section><section><d
 	<li>A development server</li>
 	<li>Lots of other utilities</li>
 </ul>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="e49b85c8ecd058c7456bc239857cfb2a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+</div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="10b844b0d14384869d7a827e03497ad5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Werkzeug Example</h2>
 </div></div>
-<div class="sl-block" data-block-type="code" style="width: 588px; height: 194px; left: 186px; top: 162px;" data-block-id="19493b331fe36a427bbf35d53786c4c2"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>from werkzeug.wrappers import Request, Response
+<div class="sl-block" data-block-type="code" style="width: 588px; height: 194px; left: 186px; top: 162px;" data-block-id="fe39cd468637cf19b4166e9223d523a7"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>from werkzeug.wrappers import Request, Response
 
 def application(environ, start_response):
     request = Request(environ)
     text = 'Hello %s!' % request.args.get('name', 'World')
     response = Response(text, mimetype='text/plain')
     return response(environ, start_response)</code></pre></div></div>
-<div class="sl-block" data-block-type="code" style="width: 588px; height: 167px; left: 186px; top: 420px;" data-block-id="c2449a335b8f47611b496d5c5170d834"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>from werkzeug.wrappers import Request, Response
+<div class="sl-block" data-block-type="code" style="width: 588px; height: 167px; left: 186px; top: 420px;" data-block-id="76c862874f7991499512502c029dee63"><div class="sl-block-content" style="z-index: 13;"><pre class="python"><code>from werkzeug.wrappers import Request, Response
 
 @Request.application
 def hello_world(request):
     result = ['Hello World']
     return Response(result, mimetype='text/html')</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 367px;" data-block-id="434c90a619c7b8b172dcd10a2007f154"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 367px;" data-block-id="0600ebbf554d1a535e72b3c3220836d5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14;">
 <p>or</p>
-</div></div></section></section><section class="stack"><section data-id="2b161f10e72318453a36d895b1af7f85">
-<div class="sl-block" data-block-type="text" style="width: 651px; left: 249px; top: 445px; height: auto;" data-block-id="ac79d8875ccdb89b5041c7b823d7ac91"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" dir="ui" data-has-custom-html="" style="z-index: 11;"></div></div>
-<div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 22px;" data-block-id="1bf8bb3c80ab3398178aef28780e6712"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
-<h1>Flask</h1>
-</div></div>
-<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 228.16px; height: 552px; left: 366px; top: 144px;" data-block-id="b1270df1c4df595ea248fd59e6f9622b"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="372" data-natural-height="900" data-src="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1471342/ngw2f-cycle-full.png"></div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="e2cb7114f71aee67d1aa76ef805e8966"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+</div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 302px;" data-block-id="de231ce659afc06ccb69a24d81cef644"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1>Demo</h1>
+</div></div></section><section data-id="9760544aca672794353559cce39dc73b"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 33px;" data-block-id="e2cb7114f71aee67d1aa76ef805e8966"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Flask Overview</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 331px;" data-block-id="21ff299c16f9dbf86d8d8866b5bafd60"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <p>&lt;placeholder&gt;</p>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="ed4bb05e36cfacefa20065f9329f5bb5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+</div></div></section><section data-id="0b772b5f2447b0909a6dcd0ad53ef685"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="ed4bb05e36cfacefa20065f9329f5bb5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Flask Architecture</h2>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 331px;" data-block-id="6b460e45ae80cee3d8d5c16ef8da1805"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
 <p>&lt;placeholder&gt;</p>
-</div></div></section><section><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="fc7da7d86f403c14f647431715d37556"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+</div></div></section><section data-id="eeff0597a64b012133168b397d4217d9"><div class="sl-block" data-block-type="text" style="height: auto; width: 600px; left: 180px; top: 33px;" data-block-id="fc7da7d86f403c14f647431715d37556"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h2>Flask Application</h2>
 </div></div>
 <div class="sl-block" data-block-type="code" style="width: 587.136929460581px; height: 283px; left: 187px; top: 261px;" data-block-id="c4f9fd06435589af660968ecaa72c91d"><div class="sl-block-content" style="z-index: 12;"><pre class="python"><code>from flask import Flask
@@ -448,32 +401,15 @@ app = Flask(__name__)
  
 @app.route("/")
 def hello():
-    return "Hello World!"
+    return "Hello World (from Flask)"
  
 if __name__ == "__main__":
-    app.run()</code></pre></div></div></section><section><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 73px; height: auto;" data-block-id="55384fefc78f6232af2d4df33d9f0612"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
-<h2>The Request</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 110px; left: 160px; top: 166px;" data-block-id="579fc1e5eab9578a12fab8aff0e240b8"><div class="sl-block-content" style="z-index: 12;"><pre class="ini"><code>$ telnet localhost 8080
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-GET / HTTP/1.0</code></pre></div></div>
-<div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 289px; height: auto;" data-block-id="ad774c04880005b43c58ab79ffbdc56d"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 13;">
-<h2>The Response</h2>
-</div></div>
-<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 640px; height: 256px; left: 160px; top: 371px;" data-block-id="3c4587e061776bc2db2ba84b9c447d72"><div class="sl-block-content" style="z-index: 14;"><pre class="ini"><code>HTTP/1.1 200 OK
-Server: nginx/1.8.0
-Date: Sun, 07 Jun 2015 22:06:58 GMT
-Content-Type: text/html
-Content-Length: 25
-Last-Modified: Tue, 02 Jun 2015 23:48:40 GMT
-Connection: close
-ETag: "556e40d8-19"
-Accept-Ranges: bytes
+    app.run()</code></pre></div></div></section><section data-id="e3addc286c74c19c1424ced893af92af">
 
-Hello World (from Nginx)
-Connection closed by foreign host.</code></pre></div></div></section></section><section data-id="65b3958f348e34c030d3c55aa113676f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 22px; height: auto;" data-block-id="f8115270a0ae2b70954929589bc3efb8"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
+
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 302px;" data-block-id="ac2e8f858f24a4d916c95d519a1561e6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+<h1>Demo</h1>
+</div></div></section></section><section data-id="65b3958f348e34c030d3c55aa113676f"><div class="sl-block" data-block-type="text" style="width: 800px; left: 80px; top: 22px; height: auto;" data-block-id="f8115270a0ae2b70954929589bc3efb8"><div class="sl-block-content" data-placeholder-tag="h1" data-placeholder-text="Title Text" style="z-index: 11;">
 <h1>References</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 620px; left: 170px; top: 140px;" data-block-id="acf05fc13cc5622f6c8c75d2ebd13755"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: left;" data-has-custom-html="" dir="ui">
@@ -491,7 +427,7 @@ Connection closed by foreign host.</code></pre></div></div></section></section><
 	<li><span style="font-size:16px;">Werkzeug Documentation<br>
 	<a href="http://werkzeug.readthedocs.org/en/latest/" target="_blank">http://werkzeug.readthedocs.org/en/latest/</a></span></li>
 </ol>
-</div></div></section><section data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1430266/bg-thefuture.jpg"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 22px;" data-block-id="0cb2ff4a39303709fec0801d4e21efeb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
+</div></div></section><section data-background-image="https://s3.amazonaws.com/media-p.slid.es/uploads/212762/images/1430266/bg-thefuture.jpg" data-id="141b7eddc29ce3e5fbe4c6d0de7157f8"><div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 22px;" data-block-id="0cb2ff4a39303709fec0801d4e21efeb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11;">
 <h1>Thank You!</h1>
 </div></div>
 <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 180px; top: 194px;" data-block-id="4ea739d41da7149eb3e03ccb51b115b0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12;">
