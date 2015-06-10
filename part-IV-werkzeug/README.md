@@ -1,29 +1,25 @@
-# Part II Gunicorn
+# Part IV Werkzeug
 
-Basic Gunicorn example.
+Basic Werkzeug example.
 
 ## Run
 
-Start Gunicorn
+Start Nginx
 
 ```
-$ cd gunicorn
-$ gunicorn --workers=2 app:app
-```
-
-In a new window start nginx
-
-```
+$ cd part-IV-werkzeug
 $ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-IV-werkzeug
 $ nginx -c $SECTION/nginx/config/nginx.conf
-$ nginx -s stop
 ```
 
-Go to Werkzeug directly: http://127.0.0.1:8000/
+Start the Gunicorn server
 
-Go to Werkzeug through Nginx: http://127.0.0.1:8080/
+```
+$ cd werkzeug
+$ gunicorn --workers=2 app:application
+```
 
-or
+## Demo
 
 ```
 $ telnet localhost 8080
@@ -31,4 +27,10 @@ Trying 127.0.0.1...
 Connected to localhost.
 Escape character is '^]'.
 GET / HTTP/1.0
+```
+
+## Clean up
+
+```
+$ nginx -s stop
 ```

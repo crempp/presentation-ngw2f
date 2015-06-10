@@ -1,22 +1,22 @@
-# Part V Flask
+# Part III WSGI
 
-Simple Flask example.
+Basic WSGI example.
 
 ## Run
 
 Start Nginx
 
 ```
-$ cd part-V-flask
-$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-V-flask
+$ cd part-III-wsgi
+$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-III-wsgi
 $ nginx -c $SECTION/nginx/config/nginx.conf
 ```
 
-Start Gunicorn
+Start the WSGI server
 
 ```
-$ cd flask_app
-$ gunicorn --workers=2 app:application
+$ cd wsgi
+$ python app.py
 ```
 
 ## Demo

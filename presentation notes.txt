@@ -1,0 +1,208 @@
+Slide Notes
+==================================================
+
+
+1) NGW2F (0:00)
+--------------------------------------------------
+Thesis: There is a subtle interplay in the components of the NGW2F stack, many pieces could be used independently but would suffer from performance issues or technical shortcomings. Used together they provide a balanced and robust web stack.
+
+
+2) The Stack (0:30)
+--------------------------------------------------
+
+
+
+3) HTTP (1:00)
+--------------------------------------------------
+
+
+3.1) HTTP Spec History (1:30)
+-----
+
+
+3.2) Req/Response (2:00)
+-----
+
+
+
+4) Nginx (2:30)
+--------------------------------------------------
+
+
+4.1) Nginx Overview (3:00)
+-----
+
+
+4.2) Nginx Architecture (3:30)
+-----
+
+
+4.3) A Typical Request (4:00)
+-----
+
+
+4.4) Setup (4:30)
+-----
+
+
+4.5) Config (5:00)
+-----
+
+
+4.6) Req/Res (5:30)
+-----
+
+
+4.7) Demo (6:00)
+-----
+$ cd part-I-nginx/
+$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-I-nginx
+$ nginx -c $SECTION/nginx/config/nginx.conf
+$ telnet localhost 8080
+  Trying 127.0.0.1...
+  Connected to localhost.
+  Escape character is '^]'.
+  GET / HTTP/1.0
+$ nginx -s stop
+
+
+5) Gunicorn (6:30)
+--------------------------------------------------
+
+
+5.1) Gunicorn Overview (7:00)
+-----
+
+
+5.2) Gunicorn Architecture (7:30)
+-----
+
+
+5.3) Gunicorn Hooks (8:00)
+-----
+
+
+5.4) Gunicorn Sample App (8:30)
+-----
+
+
+5.5) Setup/Run (9:00)
+-----
+
+
+5.6) Reg/Res (9:30)
+-----
+
+
+5.7) Demo (10:00)
+-----
+$ virtualenv env
+$ source env/bin/activate
+(env)$ pip install -r requirements.txt
+(env)$ cd part-II-wsgi/
+(env)$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-I-nginx
+(env)$ nginx -c $SECTION/nginx/config/nginx.conf
+(env)$ telnet localhost 8080
+  Trying 127.0.0.1...
+  Connected to localhost.
+  Escape character is '^]'.
+  GET / HTTP/1.0
+(env)$ nginx -s stop
+
+
+6) WSGI (10:30)
+--------------------------------------------------
+
+
+6.1) WSGI Spec (11:00)
+-----
+
+
+6.2) WSGI Dispatch (11:30)
+-----
+
+
+6.3) WSGI Application (12:00)
+-----
+
+
+6.4) Reg/Res (12:30)
+-----
+
+
+6.5) WSGI Middleware (13:00)
+-----
+
+
+6.6) Demo (13:30)
+-----
+$ cd part-II-wsgi
+$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-II-wsgi
+$ nginx -c $SECTION/nginx/config/nginx.conf
+$ cd wsgi
+$ python app.py
+$ telnet localhost 8080
+  Trying 127.0.0.1...
+  Connected to localhost.
+  Escape character is '^]'.
+  GET / HTTP/1.0
+$ nginx -s stop
+
+
+7) Werkzeug/Flask (14:00)
+--------------------------------------------------
+
+
+7.1) Werkzeug (14:30)
+-----
+
+
+7.2) Werkzeug Example (15:00)
+-----
+
+7.3) Demo (0:00)
+-----
+(env)$ cd part-IV-werkzeug
+(env)$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-IV-werkzeug
+(env)$ nginx -c $SECTION/nginx/config/nginx.conf
+(env)$ cd werkzeug
+(env)$ gunicorn --workers=2 app:application
+(env)$ telnet localhost 8080
+  Trying 127.0.0.1...
+  Connected to localhost.
+  Escape character is '^]'.
+  GET / HTTP/1.0
+(env)$ nginx -s stop
+
+
+7.4) Flask Overview (15:30)
+-----
+
+
+7.5) Flask Architecture (16:00)
+-----
+
+
+7.6) Flask Application (16:30)
+-----
+
+
+7.7) Reg/Res (17:00)
+-----
+
+
+7.8) Demo (17:30)
+-----
+(env)$ cd part-V-flask
+(env)$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-V-flask
+(env)$ nginx -c $SECTION/nginx/config/nginx.conf
+(env)$ cd flask_app
+(env)$ gunicorn --workers=2 app:application
+(env)$ telnet localhost 8080
+  Trying 127.0.0.1...
+  Connected to localhost.
+  Escape character is '^]'.
+  GET / HTTP/1.0
+(env)$ nginx -s stop
+
+

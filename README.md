@@ -13,7 +13,7 @@ Stack
 ```
 $ virtualenv env
 $ source env/bin/activate
-(env)$ pip install gunicorn
+(env)$ pip install -r requirements.txt
 ```
 
 ## Publish to Github Pages

@@ -1,21 +1,21 @@
-# Part V Flask
+# Part II Gunicorn
 
-Simple Flask example.
+Basic Gunicorn example.
 
 ## Run
 
 Start Nginx
 
 ```
-$ cd part-V-flask
-$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-V-flask
+$ cd part-II-gunicorn
+$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-II-gunicorn
 $ nginx -c $SECTION/nginx/config/nginx.conf
 ```
 
 Start Gunicorn
 
 ```
-$ cd flask_app
+$ cd gunicorn
 $ gunicorn --workers=2 app:application
 ```
 

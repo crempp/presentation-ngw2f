@@ -1,4 +1,4 @@
-def app(environ, start_response):
+def application(environ, start_response):
     """Simplest possible WSGI application object"""
     data = 'Hello, World! (from Gunicorn)\n'
     status = '200 OK'
