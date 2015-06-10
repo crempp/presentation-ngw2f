@@ -4,56 +4,102 @@ Slide Notes
 
 1) NGW2F (0:00)
 --------------------------------------------------
+- Welcome
+- What is NGW2F, is it a thing?
+- I made it up
+- Cute acronyms are difficult
+- Why is this an adventure story?
+   - LOTR Ref?
+   - I get to travel to beautiful Austin
+   - We all get to travel deep into the depths of a little-known web stack
+
+- Before I continue
+  - I like to have an open format for my presentations.
+  - I will try my best to get through the material but if you have questions stop me.
+  - If I’m wrong on something, stop me.
+  - I want you to get the most value out of this.
+
+1.1) About Me (0:30)
+-----
+- Chad Rempp
+- Python Developer at TrueCar ~1 year
+- Dedicated to understanding stacks
+- Worked with LAMP, MEAN, RoR, and now NGW2F
+
+
+2) The Stack (1:30)
+--------------------------------------------------
+- So what’s inside this stack?
+
+- Nginx - crazy fast web and proxy server
+- Gunincorn - Python web server (based on Ruby’s Unicorn)
+<why two web servers>
+- WSGI - PEP standard for communication between a server and python application.
+- Werkzeug - Web toolkit, WSGI wrapper
+- Flask - Python web framework
+
+- Who has used one or more of these tools?
+
 Thesis: There is a subtle interplay in the components of the NGW2F stack, many pieces could be used independently but would suffer from performance issues or technical shortcomings. Used together they provide a balanced and robust web stack.
 
 
-2) The Stack (0:30)
+
+3) HTTP (2:30)
 --------------------------------------------------
+- HTTP is a spec that’s been around since ~1990
+- HTTP is a connection, request, response, caching (more complicated in recent RFCs)
 
 
+3.1) HTTP Spec History (2:45)
+-----
+- Old
+- Fluid
+- New, exciting changes are happening - Now!
 
-3) HTTP (1:00)
+
+3.2) Req/Response (3:00)
+-----
+- telnet
+- explain request
+- explain response
+- the request and response are just text (in this example)
+
+
+4) Nginx (3:15)
 --------------------------------------------------
+- First layer in our stack
+- Web proxy and web server used for many purposes
 
 
-3.1) HTTP Spec History (1:30)
+4.1) Nginx Overview (3:30)
 -----
+  - Basic web server
+  - Web proxy
+  - SMTP proxy
+  - Load balancing
 
 
-3.2) Req/Response (2:00)
+4.2) Nginx Architecture (4:00)
 -----
+ Core architecture is vented allowing for insane number of connections.
+- Supports HTTP/HTTPS and Multiplexing
+- Multiple worker processes (= num of procs)
+- Allows hot-upgrade
+- too much to go into here
 
 
-
-4) Nginx (2:30)
---------------------------------------------------
-
-
-4.1) Nginx Overview (3:00)
+4.3) Setup (4:30)
 -----
+- Setup is simple, except on Windows
 
 
-4.2) Nginx Architecture (3:30)
+4.4) Config (4:45)
 -----
+- Configuration gets complicated fast
+- This is close to a bare minimum config file
 
 
-4.3) A Typical Request (4:00)
------
-
-
-4.4) Setup (4:30)
------
-
-
-4.5) Config (5:00)
------
-
-
-4.6) Req/Res (5:30)
------
-
-
-4.7) Demo (6:00)
+4.5) Demo (5:00)
 -----
 $ cd part-I-nginx/
 $ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-I-nginx
@@ -66,35 +112,48 @@ $ telnet localhost 8080
 $ nginx -s stop
 
 
-5) Gunicorn (6:30)
+5) Gunicorn (6:00)
 --------------------------------------------------
+- Second layer in our stack
+- Python web server
+- Gunicorn takes raw HTTP message, parses it and speaks to application using WSGI
 
-
-5.1) Gunicorn Overview (7:00)
+5.1) Gunicorn Overview (6:15)
 -----
+- WSGI Compliant
+- Multiple workers
+- Worker management
+- Sync, Async, Tornado, Python3 Async
 
 
-5.2) Gunicorn Architecture (7:30)
+5.2) Gunicorn Architecture (6:30)
 -----
+- Master Process spawns and manages workers, does not accept connections
+- Works accept connections and pass them to the application
+- Will not go into the details of the different worker types
 
 
-5.3) Gunicorn Hooks (8:00)
+5.3) Gunicorn Hooks (7:00)
 -----
+- 14 hooks allowing custom logic/integrations
+- Some hooks run on the master process, some in the workers
+- Hooks are written in python and included in the Gunicorn config.py
 
 
-5.4) Gunicorn Sample App (8:30)
+5.4) Gunicorn Sample App (7:30)
 -----
+- This is a WSGI application which we’ll cover in the next section.
 
 
-5.5) Setup/Run (9:00)
+5.5) Setup/Run (8:00)
 -----
+- Install via pip
+- Lots of command line options
+- Pass the gunicorn command the Python module path of the application
+- If you get an error "SyntaxError: invalid syntax" ignore it, Gunicorn was successfully installed.
 
 
-5.6) Reg/Res (9:30)
------
-
-
-5.7) Demo (10:00)
+5.6) Demo (10:00)
 -----
 $ virtualenv env
 $ source env/bin/activate
@@ -112,29 +171,38 @@ $ source env/bin/activate
 
 6) WSGI (10:30)
 --------------------------------------------------
+- Web Server Gateway Interface
+- Not a layer in the stack but a way to communicate between layers
+- How servers talk to applications
+- Gunicorn takes raw HTTP message, parses it and speaks to application using WSGI
 
 
 6.1) WSGI Spec (11:00)
 -----
+- PEP 333, updated in PEP 3333
+- Server provides ‘environ’ dict - environment vars (parsed request parts, server/os vars)
+- Server provides ‘start_response()’ callback - App calls this to set the status and headers
+- App provides a entry point taking two params - called by server to handle a request
+- App calls start response
+- App returns data for the body (as iterator)
 
 
 6.2) WSGI Dispatch (11:30)
 -----
+- Sample Python for how the WSGI dispatch works
+- Server assembles the environ
+- Server calls application entry point
+- Application returns body as utterable
+- Server writes out data
 
 
 6.3) WSGI Application (12:00)
 -----
+- Sample python code
+- Very simple
 
 
-6.4) Reg/Res (12:30)
------
-
-
-6.5) WSGI Middleware (13:00)
------
-
-
-6.6) Demo (13:30)
+6.4) Demo (12:30)
 -----
 $ cd part-II-wsgi
 $ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-II-wsgi
@@ -149,18 +217,42 @@ $ telnet localhost 8080
 $ nginx -s stop
 
 
+6.5) WSGI Middleware (13:30)
+-----
+- Can chain WSGI applications together to form middleware
+- Fun things to do
+  - Insert/Modify headers
+  - Caching
+  - Pre-application routing
+  - Response modification
+  - Only limit is your imagination
+
+
 7) Werkzeug/Flask (14:00)
 --------------------------------------------------
+- Flask is an web app framework
+- Flask depends on Werkzeug
 
 
-7.1) Werkzeug (14:30)
+7.1) Werkzeug (14:15)
 -----
+- Werkzeug is one of the most advanced WSGI utilities for Python
+  - WSGI helpers
+  - URL routing
+  - HTTP utilities
+  - Data Structures
+  - Middleware
+  - A development server
+  - Lots of other utilities
 
 
-7.2) Werkzeug Example (15:00)
+7.2) Werkzeug Example (14:45)
 -----
+- Example 1) parse and wrap the request and response
+- Example 2) additionally, wrap the application
+- so, so much more you can do
 
-7.3) Demo (0:00)
+7.3) Demo (15:15)
 -----
 (env)$ cd part-IV-werkzeug
 (env)$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-IV-werkzeug
@@ -175,23 +267,22 @@ $ nginx -s stop
 (env)$ nginx -s stop
 
 
-7.4) Flask Overview (15:30)
+7.4) Flask Overview (16:00)
 -----
+- “Micro” framework (simple but extensible core)
+- Python 3 support (>=3.3) but there are some issues with WSGI and unicode, among other things
 
-
-7.5) Flask Architecture (16:00)
------
 
 
 7.6) Flask Application (16:30)
 -----
+- Simple application function
+- Gunicorn will call the ‘app’
+- The views can be class-based
+- Dev server
 
 
-7.7) Reg/Res (17:00)
------
-
-
-7.8) Demo (17:30)
+7.8) Demo (17:00)
 -----
 (env)$ cd part-V-flask
 (env)$ export SECTION=/Users/crempp/projects/presentation-ngw2f/part-V-flask
@@ -204,5 +295,20 @@ $ nginx -s stop
   Escape character is '^]'.
   GET / HTTP/1.0
 (env)$ nginx -s stop
+
+
+8) Questions (18:00)
+--------------------------------------------------
+
+
+
+9) Thank You 
+--------------------------------------------------
+- Thank you all
+- This presentation is online
+- I’ll be expanding this presentation into a blog article in the next month or two
+- If you have any more questions come see me afterwards
+- If you are interested in this topic come talk to C/Kris or myself. We may have a job for you.
+
 
 
